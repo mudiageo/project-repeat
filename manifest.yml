@@ -1,0 +1,4 @@
+apps:
+- name: project-repeat
+  random-route: true
+  memory: 128M
