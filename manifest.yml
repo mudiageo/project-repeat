@@ -1,4 +1,8 @@
-apps:
-- name: project-repeat
-  random-route: true
+---
+applications:
+- path: .
+  name: project-repeat
+  buildpack: nodejs_buildpack
   memory: 128M
+  instances: 1
+  random-route: true
