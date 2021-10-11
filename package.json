@@ -9,7 +9,6 @@
   "license": "ISC",
   "description": "Node.js app",
   "dependencies": {
-    "express": "^4.16.1",
     "node-cron": "puppeteer",
     "puppeteer": ""
   }
