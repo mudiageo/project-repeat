@@ -1,11 +1,16 @@
 {
   "name": "project-repeat",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "example.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node example.js"
   },
-  "author": "",
+  "author": "mudiageo",
   "license": "ISC",
-  "description": ""
+  "description": "Node.js app",
+  "dependencies": {
+    "express": "^4.16.1",
+    "node-cron": "puppeteer",
+    "puppeteer": ""
+  }
 }
