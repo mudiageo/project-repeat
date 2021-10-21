@@ -1,11 +1,12 @@
 const puppeteer = require('puppeteer');
 const cron = require('node-cron');
-
+const proxy = require('./myproxy');
 (async () => {
   //var browser = await puppeteer.launch({ headless: false }); // default is true
 
-var browser = await puppeteer.launch();
+var browser = await puppeteer.launch({args: ['--proxy-server=http://10.10.10.10:8000']});
 var page = await browser.newPage();
+await page.authenticate();
 await page.goto('https://ouo.io/FGGWvJ');
 await page.waitFor(5000);
 console.log('try');

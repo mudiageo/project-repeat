@@ -1,15 +1,25 @@
 {
   "name": "project-repeat",
   "version": "1.0.0",
-  "main": "example.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node example.js"
+    "start": "node index.js"
   },
-  "author": "mudiageo",
+  "repository":{
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
   "license": "ISC",
-  "description": "Node.js app",
-  "dependencies": {
-    "node-cron": "puppeteer",
-    "puppeteer": ""
+  "dependencies":{
+    "node-cron": "^4.9.8",
+    "puppeteer": "^4.9.8",
+    "myproxy": "^4.9.8",
+    "request": "^4.9.8",
+    "cheerio": "^4.9.8"
+  },
+  "description": "",
+  "engines": {
+    "node":"14.4.0"
   }
 }
