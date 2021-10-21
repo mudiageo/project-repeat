@@ -5,7 +5,7 @@ const cron = require('node-cron');
 (async () => {
   //var browser = await puppeteer.launch({ headless: false }); // default is true
 
-//var browser = await puppeteer.launch();
+var browser = await puppeteer.launch();
 var page = await browser.newPage();
 //await page.authenticate();
 await page.goto('https://ouo.io/FGGWvJ');
