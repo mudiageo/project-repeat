@@ -3,8 +3,20 @@ const cron = require('node-cron');
 //const proxy = require('./myproxy');
 (async () => {
  // var myProxy = '--proxy-server='+proxy.myProxy;
-  var browser = await puppeteer.launch();
-                                       
+ 
+ 
+
+ 
+
+
+
+  var browser = await puppeteer.launch({
+                                       args: [
+
+        "--no-sandbox",
+        "--single-process",
+        "--no-zygote"
+    ]});
 
 
 //  var browser = await puppeteer.launch({args: [myProxy]});
@@ -29,8 +41,15 @@ await browser.close();
 })();
 var task = cron.schedule('*/40 */2 * * * *', () => {
   (async () => {
+   var browser = await puppeteer.launch({
+                                       args: [
+
+        "--no-sandbox",
+        "--single-process",
+        "--no-zygote"
+    ]});
     //var myProxy = '--proxy-server='+proxy.myProxy;
-    var browser = await puppeteer.launch();// default is true
+    //var browser = await puppeteer.launch();// default is true
    // var browser = await puppeteer.launch({args: [myProxy]});
     var page = await browser.newPage();
     //await page.authenticate();
