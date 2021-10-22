@@ -3,7 +3,7 @@ const cron = require('node-cron');
 //const proxy = require('./myproxy');
 (async () => {
  // var myProxy = '--proxy-server='+proxy.myProxy;
-  var browser = await puppeteer.launch():
+  var browser = await puppeteer.launch();
                                        
 
 
