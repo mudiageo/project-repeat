@@ -4,8 +4,13 @@ const cron = require('node-cron');
 (async () => {
   try{
   //var myProxy = '--proxy-server='+proxy.myProxy;
-  var browser = await puppeteer.launch({ headless: false }); // default is true
-  //var browser = await puppeteer.launch();
+  var browser = await puppeteer.launch({ args: [
+        "--incognito",
+        "--no-sandbox",
+        "--single-process",
+        "--no-zygote"
+    ]}); // default is true
+  //var browser = await puppeteer.launch({
   var page = await browser.newPage();
 //  await page.authenticate();
 await page.goto('https://ouo.io/FGGWvJ').catch(error => console.log(error.message));
@@ -30,7 +35,12 @@ var task = cron.schedule('*/40 */2 * * * *', () => {
     try{
   //  var myProxy = '--proxy-server='+proxy.myProxy;
     //var browser = await puppeteer.launch({ headless: false }); // default is true
-    var browser = await puppeteer.launch();
+    var browser = await puppeteer.launch({args: [
+        "--incognito",
+        "--no-sandbox",
+        "--single-process",
+        "--no-zygote"
+    ]});
     var page = await browser.newPage();
   //  await page.authenticate();
     
