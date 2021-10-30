@@ -13,7 +13,7 @@ const cron = require('node-cron');
   //var browser = await puppeteer.launch({
   var page = await browser.newPage();
 //  await page.authenticate();
-await page.goto('https://ouo.io/FGGWvJ').catch(error => console.log(error.message));
+await page.goto('https://ouo.io/jGWIxeU').catch(error => console.log(error.message));
 await page.waitFor(5000).catch(error => console.log(error.message));
 
 await page.click('#btn-main');
@@ -44,7 +44,7 @@ var task = cron.schedule('*/40 */2 * * * *', () => {
     var page = await browser.newPage();
   //  await page.authenticate();
     
-    await page.goto('https://ouo.io/FGGWvJ').catch(error => console.log(error.message));
+    await page.goto('https://ouo.io/jGWIxeU').catch(error => console.log(error.message));
     await page.waitFor(5000).catch(error => console.log(error.message));
     await page.click('#btn-main');
     await page.waitFor(5000).catch(error => console.log(error.message));
