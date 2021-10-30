@@ -2,6 +2,7 @@ const puppeteer = require('puppeteer');
 const cron = require('node-cron');
 //const proxy = require('./myproxy');
 (async () => {
+  try{
   //var myProxy = '--proxy-server='+proxy.myProxy;
   var browser = await puppeteer.launch({ headless: false }); // default is true
   //var browser = await puppeteer.launch();
@@ -20,9 +21,13 @@ await page.click('#btn-main') ;
 
 //await page.screenshot({ path: 'example.png' });
 await browser.close();
+    }catch(err){
+      console.log(err);
+      }
 })();
 var task = cron.schedule('*/40 */2 * * * *', () => {
   (async () => {
+    try{
   //  var myProxy = '--proxy-server='+proxy.myProxy;
     //var browser = await puppeteer.launch({ headless: false }); // default is true
     var browser = await puppeteer.launch();
@@ -39,6 +44,9 @@ var task = cron.schedule('*/40 */2 * * * *', () => {
     await page.waitFor(5000).catch(error => console.log(error.message));
     await page.click('#btn-main') ;
     await browser.close().catch(error => console.log(error.message));
+      }catch(err){
+        console.log(err);
+        }
     
   })();
 });
