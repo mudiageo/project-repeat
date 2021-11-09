@@ -5,7 +5,11 @@ const cron = require('node-cron');
   try{
 //  var myProxy = '--proxy-server='+proxy.myProxy;
     //var browser = await puppeteer.launch({ headless: false }); // default is true
-    var browser = await puppeteer.launch();
+    var browser = await puppeteer.launch({'args' : [
+    '--no-sandbox',
+    '--disable-setuid-sandbox'
+  ]
+});
     var page = await browser.newPage();
   //  await page.authenticate();
     
@@ -33,7 +37,11 @@ var task = cron.schedule('*/20 * * * * *', () => {
  try{
       //  var myProxy = '--proxy-server='+proxy.myProxy;
     //var browser = await puppeteer.launch({ headless: false }); // default is true
-    var browser = await puppeteer.launch();
+    var browser = await puppeteer.launch({'args' : [
+    '--no-sandbox',
+    '--disable-setuid-sandbox'
+  ]
+});
     var page = await browser.newPage();
   //  await page.authenticate();
   //await page.goto('file:///C:/xampp1/htdocs/npm/index.html');
