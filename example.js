@@ -43,11 +43,11 @@ var task = cron.schedule('*/20 * * * * *', () => {
     await page.waitFor(5000);
   
   
-    await page.click('#button2')
+    await page.click('#btn-main')
     await page.waitFor(5000);
-    await page.click('#button2')
+    await page.click('#btn-main')
     await page.waitFor(5000);
-    await page.click('#button2')
+    await page.click('#btn-main')
     await page.waitFor(5000);
     await browser.close(); 
       
