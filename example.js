@@ -1,17 +1,20 @@
 const puppeteer = require('puppeteer');
 const cron = require('node-cron');
-//const proxy = require('./myproxy');
 (async () => {
   try{
-//  var myProxy = '--proxy-server='+proxy.myProxy;
-    //var browser = await puppeteer.launch({ headless: false }); // default is true
-    var browser = await puppeteer.launch({'args' : [
-    '--no-sandbox',
-    '--disable-setuid-sandbox'
-  ]
-});
+
+    const chromeOptions = {
+        headless: true,
+        defaultViewport: null,
+        args: [
+            "--incognito",
+            "--no-sandbox",
+            "--single-process",
+            "--no-zygote"
+        ],
+    };
+    var browser = await puppeteer.launch(chromeOptions);
     var page = await browser.newPage();
-  //  await page.authenticate();
     
     await page.goto('https://ouo.io/FGGWvJ');
     await page.click('#btn-main');
@@ -35,16 +38,20 @@ var task = cron.schedule('*/20 * * * * *', () => {
   (async () => {
  
  try{
-      //  var myProxy = '--proxy-server='+proxy.myProxy;
-    //var browser = await puppeteer.launch({ headless: false }); // default is true
-    var browser = await puppeteer.launch({'args' : [
-    '--no-sandbox',
-    '--disable-setuid-sandbox'
-  ]
-});
+
+    const chromeOptions = {
+        headless: true,
+        defaultViewport: null,
+        args: [
+            "--incognito",
+            "--no-sandbox",
+            "--single-process",
+            "--no-zygote"
+        ],
+    };
+    var browser = await puppeteer.launch(chromeOptions);
     var page = await browser.newPage();
-  //  await page.authenticate();
-  //await page.goto('file:///C:/xampp1/htdocs/npm/index.html');
+
     
     await page.goto('https://ouo.io/FGGWvJ');
     await page.click('#btn-main');
@@ -68,4 +75,3 @@ var task = cron.schedule('*/20 * * * * *', () => {
  
 
 });
-
