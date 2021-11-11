@@ -3,14 +3,11 @@ const cron = require('node-cron');
 (async () => {
   try{
 
-    const chromeOptions = {
-        headless: true,
-        defaultViewport: null,
+    var chromeOptions = {
+        headless: false,
         args: [
             "--incognito",
-            "--no-sandbox",
-            "--single-process",
-            "--no-zygote"
+            "--no-sandbox"
         ],
     };
     var browser = await puppeteer.launch(chromeOptions);
@@ -34,21 +31,19 @@ const cron = require('node-cron');
   }
   
   })();
-var task = cron.schedule('*/20 * * * * *', () => {
+var task = cron.schedule('*/20 */2 * * * *', () => {
   (async () => {
  
  try{
 
-    const chromeOptions = {
-        headless: true,
-        defaultViewport: null,
+    var chromeOptions = {
+        headless: false,
         args: [
             "--incognito",
-            "--no-sandbox",
-            "--single-process",
-            "--no-zygote"
+            "--no-sandbox"
         ],
     };
+    
     var browser = await puppeteer.launch(chromeOptions);
     var page = await browser.newPage();
 
