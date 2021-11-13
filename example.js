@@ -64,5 +64,5 @@ console.log('CAtch'+e);
                          }
 })();
 
-};
+});
 
