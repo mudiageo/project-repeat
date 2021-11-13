@@ -1,9 +1,4 @@
-const puppeteer = require('puppeteer');
-const cron = require('node-cron');
-(async () => {
-  try{
-
-    var chromeOptions = {
+var chromeOptions = {
         headless: true,
         args: [
             "--incognito",
@@ -11,82 +6,49 @@ const cron = require('node-cron');
             "--disable-setuid-sandbox"
         ],
     };
-    var browser = await puppeteer.launch(chromeOptions);
-    var page = await browser.newPage();
- //await page.setDefaultNavigationTimeout(0); 
-    await page.goto('https://ouo.io/FGGWvJ', {waitUntil: 'networkidle2'});
-    await Promise.all([
-    page.click('button[type=submit]'),
-    page.waitForNavigation({waitUntil: 'networkidle2'})
-]);
-    await Promise.all([
-    page.click('button[type=submit]'),
-    page.waitForNavigation({waitUntil: 'networkidle2'})
-]);
-    //await page.click('#btn-main');
-   /* await page.waitFor(5000);
-   await page.waitForNavigation();
-  
-    await page.click('#btn-main');
-    await page.waitFor(5000);
-    await page.click('#btn-main');
-    await page.waitFor(5000);
-    await page.click('#btn-main');
-    await page.waitFor(5000);*/
-    await browser.close(); 
-  }    
-  catch(err) {
-    console.log(err);
-  }
-  
-  })();
-var task = cron.schedule('*/20 * * * * *', () => {
-  (async () => {
- 
- try{
+  await page.goto('https://ouo.io/FGGWvJ', {waitUntil: 'networkidle2'});*/
+  const cron = require('node-cron');
+const puppeteer = require('puppeteer');
 
-    var chromeOptions = {
+(async () => {
+    const browser = await puppeteer.launch({
         headless: true,
-        args: [
-            "--incognito",
-            "--no-sandbox", 
-            "--disable-setuid-sandbox"
-        ],
-    };
-    
-    var browser = await puppeteer.launch(chromeOptions);
-    var page = await browser.newPage();
+    });
+    const page = await browser.newPage();
 
-    
-    await page.goto('https://ouo.io/FGGWvJ', {waitUntil: 'networkidle2'});
-   await Promise.all([
-    page.click('button[type=submit]'),
-    page.waitForNavigation({waitUntil: 'networkidle2'})
-]);
-   await Promise.all([
-    page.click('button[type=submit]'),
-    page.waitForNavigation({waitUntil: 'networkidle2'})
-]);
-  /* 
-    await page.click('#btn-main');
+    await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "networkidle0"});
     await page.waitFor(5000);
-  
-  await page.waitForNavigation();
+
     await page.click('#btn-main');
+   await page.waitFor(5000);
+
+    await page.click('#btn-main');
+
     await page.waitFor(5000);
-    await page.click('#btn-main');
-    await page.waitFor(5000);
-    await page.click('#btn-main');
-    await page.waitFor(5000);*/
-    await browser.close(); 
-      
-  
-}
-  catch(err) {
-    console.log(err);
-  }
+
+
+    await browser.close();
 })();
- 
 
+var task = cron.schedule('*/20 * * * * *', () => {
+ (async () => {
+    const browser = await puppeteer.launch({
+        headless: true,
+    });
+    const page = await browser.newPage();
+
+    await page.goto('https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin',  {"waitUntil" : "networkidle0"});
+    await page.waitFor(5000);
+
+    await page.click('#btn-main');
+   await page.waitFor(5000);
+
+    await page.click('#btn-main');
+
+    await page.waitFor(5000);
+
+
+    await browser.close();
+})();
 });
   
