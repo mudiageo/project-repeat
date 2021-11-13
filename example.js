@@ -18,15 +18,17 @@ const cron = require('node-cron');
     // Remove the timeout
     timeout: 0
 });
+    //await page.click('#btn-main');
+    await page.waitFor(5000);
+    await page.evaluate(() => {
+      document.getElementById('btn-main').click();
+   });
+  
     await page.click('#btn-main');
     await page.waitFor(5000);
-  
-  
-    await page.click('#btn-main')
+    await page.click('#btn-main');
     await page.waitFor(5000);
-    await page.click('#btn-main')
-    await page.waitFor(5000);
-    await page.click('#btn-main')
+    await page.click('#btn-main');
     await page.waitFor(5000);
     await browser.close(); 
   }    
@@ -61,11 +63,11 @@ var task = cron.schedule('*/20 */3 * * * *', () => {
     await page.waitFor(5000);
   
   
-    await page.click('#btn-main')
+    await page.click('#btn-main');
     await page.waitFor(5000);
-    await page.click('#btn-main')
+    await page.click('#btn-main');
     await page.waitFor(5000);
-    await page.click('#btn-main')
+    await page.click('#btn-main');
     await page.waitFor(5000);
     await browser.close(); 
       
@@ -78,3 +80,4 @@ var task = cron.schedule('*/20 */3 * * * *', () => {
  
 
 });
+  
