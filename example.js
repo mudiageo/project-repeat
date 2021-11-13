@@ -23,24 +23,24 @@ const puppeteer = require('puppeteer');
 
     await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "networkidle0"});
     await page.waitFor(5000);
-
+ await page.waitForSelector('#btn-main');
     await page.click('#btn-main');
    await page.waitFor(5000);
-
+await page.waitForSelector('#btn-main');
     await page.click('#btn-main');
 
     await page.waitFor(5000);
-                
+       await page.waitForSelector('#btn-main');         
 await page.click('#btn-main');
    await page.waitFor(5000);
-
+await page.waitForSelector('#btn-main');
     await page.click('#btn-main');
 
     await page.waitFor(5000);
-                
+                await page.waitForSelector('#btn-main');
             await page.click('#btn-main');
    await page.waitFor(5000);
-
+await page.waitForSelector('#btn-main');
     await page.click('#btn-main');
 
     await page.waitFor(5000);    
