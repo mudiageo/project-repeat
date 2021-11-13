@@ -22,29 +22,22 @@ const puppeteer = require('puppeteer');
     const page = await browser.newPage();
 
     await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "networkidle0"});
-    await page.waitFor(5000);
- await page.waitForSelector('#btn-main');
+    
     await page.click('#btn-main');
    await page.waitFor(5000);
-await page.waitForSelector('#btn-main');
-    await page.click('#btn-main');
-
-    await page.waitFor(5000);
-       await page.waitForSelector('#btn-main');         
-await page.click('#btn-main');
-   await page.waitFor(5000);
-await page.waitForSelector('#btn-main');
-    await page.click('#btn-main');
-
-    await page.waitFor(5000);
-                await page.waitForSelector('#btn-main');
-            await page.click('#btn-main');
-   await page.waitFor(5000);
-await page.waitForSelector('#btn-main');
-    await page.click('#btn-main');
-
-    await page.waitFor(5000);    
-
+ await page.waitFor(5000);
+ await page.waitForSelector('#btn-main').click('#btn-main');
+            await page.waitFor(5000);
+ await page.waitForSelector('#btn-main').click('#btn-main');
+                
+await page.waitFor(5000);
+ await page.waitForSelector('#btn-main').click('#btn-main');
+             await page.waitFor(5000);
+ await page.waitForSelector('#btn-main').click('#btn-main');
+                
+             await page.waitFor(5000);
+ await page.waitForSelector('#btn-main').click('#btn-main');   
+                
     await browser.close();
                 }
         catch(e){
