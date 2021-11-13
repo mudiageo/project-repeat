@@ -19,8 +19,16 @@ const cron = require('node-cron');
     // Remove the timeout
     timeout: 0
 });
+    await Promise.all([
+    page.click('button[type=submit]'),
+    page.waitForNavigation({waitUntil: 'networkidle2'})
+]);
+    await Promise.all([
+    page.click('button[type=submit]'),
+    page.waitForNavigation({waitUntil: 'networkidle2'})
+]);
     //await page.click('#btn-main');
-    await page.waitFor(5000);
+   /* await page.waitFor(5000);
    await page.waitForNavigation();
   
     await page.click('#btn-main');
@@ -28,7 +36,7 @@ const cron = require('node-cron');
     await page.click('#btn-main');
     await page.waitFor(5000);
     await page.click('#btn-main');
-    await page.waitFor(5000);
+    await page.waitFor(5000);*/
     await browser.close(); 
   }    
   catch(err) {
@@ -59,7 +67,15 @@ var task = cron.schedule('*/20 * * * * *', () => {
     // Remove the timeout
     timeout: 0
 });
-   
+   await Promise.all([
+    page.click('button[type=submit]'),
+    page.waitForNavigation({waitUntil: 'networkidle2'})
+]);
+   await Promise.all([
+    page.click('button[type=submit]'),
+    page.waitForNavigation({waitUntil: 'networkidle2'})
+]);
+  /* 
     await page.click('#btn-main');
     await page.waitFor(5000);
   
@@ -69,7 +85,7 @@ var task = cron.schedule('*/20 * * * * *', () => {
     await page.click('#btn-main');
     await page.waitFor(5000);
     await page.click('#btn-main');
-    await page.waitFor(5000);
+    await page.waitFor(5000);*/
     await browser.close(); 
       
   
