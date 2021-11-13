@@ -9,8 +9,9 @@
   await page.goto('https://ouo.io/FGGWvJ', {waitUntil: 'networkidle2'});*/
   const cron = require('node-cron');
 const puppeteer = require('puppeteer');
-try{
+
 (async () => {
+        try{
     const browser = await puppeteer.launch({
         headless: true,
         args: [
@@ -32,10 +33,14 @@ try{
 
 
     await browser.close();
+                }catch(e){
+                        console.log('38387'+e);
+                        }
 })();
 
 var task = cron.schedule('*/20 * * * * *', () => {
  (async () => {
+         try{
     const browser = await puppeteer.launch({
         headless: true,
     });
@@ -53,8 +58,11 @@ var task = cron.schedule('*/20 * * * * *', () => {
 
 
     await browser.close();
-})();
-});
-}catch(e){
+                 }catch(e){
+                         
 console.log('CAtch'+e);
-}
+                         }
+})();
+
+}catch(e){
+
