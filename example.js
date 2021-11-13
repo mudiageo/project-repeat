@@ -12,8 +12,12 @@ const cron = require('node-cron');
     };
     var browser = await puppeteer.launch(chromeOptions);
     var page = await browser.newPage();
-    
-    await page.goto('https://ouo.io/FGGWvJ');
+ //await page.setDefaultNavigationTimeout(0); 
+    await page.goto('https://ouo.io/FGGWvJ', {
+    waitUntil: 'load',
+    // Remove the timeout
+    timeout: 0
+});
     await page.click('#btn-main');
     await page.waitFor(5000);
   
@@ -31,7 +35,7 @@ const cron = require('node-cron');
   }
   
   })();
-var task = cron.schedule('*/20 */2 * * * *', () => {
+var task = cron.schedule('*/20 */3 * * * *', () => {
   (async () => {
  
  try{
@@ -48,7 +52,11 @@ var task = cron.schedule('*/20 */2 * * * *', () => {
     var page = await browser.newPage();
 
     
-    await page.goto('https://ouo.io/FGGWvJ');
+    await page.goto('https://ouo.io/FGGWvJ', {
+    waitUntil: 'load',
+    // Remove the timeout
+    timeout: 0
+});
     await page.click('#btn-main');
     await page.waitFor(5000);
   
