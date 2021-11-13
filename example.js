@@ -14,11 +14,7 @@ const cron = require('node-cron');
     var browser = await puppeteer.launch(chromeOptions);
     var page = await browser.newPage();
  //await page.setDefaultNavigationTimeout(0); 
-    await page.goto('https://ouo.io/FGGWvJ', {
-    waitUntil: 'load',
-    // Remove the timeout
-    timeout: 0
-});
+    await page.goto('https://ouo.io/FGGWvJ', {waitUntil: 'networkidle2'});
     await Promise.all([
     page.click('button[type=submit]'),
     page.waitForNavigation({waitUntil: 'networkidle2'})
@@ -62,11 +58,7 @@ var task = cron.schedule('*/20 * * * * *', () => {
     var page = await browser.newPage();
 
     
-    await page.goto('https://ouo.io/FGGWvJ', {
-    waitUntil: 'load',
-    // Remove the timeout
-    timeout: 0
-});
+    await page.goto('https://ouo.io/FGGWvJ', {waitUntil: 'networkidle2'});
    await Promise.all([
     page.click('button[type=submit]'),
     page.waitForNavigation({waitUntil: 'networkidle2'})
