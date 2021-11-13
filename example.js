@@ -9,7 +9,7 @@
   await page.goto('https://ouo.io/FGGWvJ', {waitUntil: 'networkidle2'});*/
   const cron = require('node-cron');
 const puppeteer = require('puppeteer');
-
+try{
 (async () => {
     const browser = await puppeteer.launch({
         headless: true,
@@ -55,4 +55,6 @@ var task = cron.schedule('*/20 * * * * *', () => {
     await browser.close();
 })();
 });
-  
+}catch(e){
+console.log('CAtch'+e);
+}
