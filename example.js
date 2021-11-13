@@ -30,7 +30,20 @@ const puppeteer = require('puppeteer');
     await page.click('#btn-main');
 
     await page.waitFor(5000);
+                
+await page.click('#btn-main');
+   await page.waitFor(5000);
 
+    await page.click('#btn-main');
+
+    await page.waitFor(5000);
+                
+            await page.click('#btn-main');
+   await page.waitFor(5000);
+
+    await page.click('#btn-main');
+
+    await page.waitFor(5000);    
 
     await browser.close();
                 }
