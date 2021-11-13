@@ -1,4 +1,4 @@
-var chromeOptions = {
+/*var chromeOptions = {
         headless: true,
         args: [
             "--incognito",
@@ -37,7 +37,7 @@ var task = cron.schedule('*/20 * * * * *', () => {
     });
     const page = await browser.newPage();
 
-    await page.goto('https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin',  {"waitUntil" : "networkidle0"});
+    await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "networkidle0"});
     await page.waitFor(5000);
 
     await page.click('#btn-main');
