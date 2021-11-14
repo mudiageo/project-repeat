@@ -39,29 +39,29 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
   await page.waitFor(5000);
                    await navigationPromise;
 
-                await context.click('#btn-main', {timeout: 0});
+                await context.click('#btn-main');
  await page.waitFor(5000);
                   await navigationPromise;
 
-await context.click('#btn-main', {timeout: 0});
+await context.click('#btn-main');
            await page.waitFor(5000);
                   await navigationPromise;
 
-await context.click('#btn-main', {timeout: 0});
+await context.click('#btn-main');
                
 await page.waitFor(5000);
                   await navigationPromise;
 
-await context.click('#btn-main', {timeout: 0});
+await context.click('#btn-main');
            await page.waitFor(5000);
                   await navigationPromise;
 
-await context.click('#btn-main', {timeout: 0});
+await context.click('#btn-main');
                
              await page.waitFor(5000);
                   await navigationPromise;
 
-await context.click('#btn-main', {timeout: 0});
+await context.click('#btn-main');
   await navigationPromise;
                
     await browser.close();
