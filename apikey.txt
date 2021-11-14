@@ -1,1 +1,7 @@
 API_KEY:XPGT8iRgSq6gjVua2IsW8Zu84K1kUyAu5HRltDjH-6D_
+API_KEY:XPGT8iRgSq6gjVua2IsW8Zu84K1kUyAu5HRltDjH-6D_
+<form method="POST" action="https://ouo.io/xreallcygo/FGGWvJ" accept-charset="UTF-8" id="form-go"><input name="_token" type="hidden" value="ZulBfRj0Ufu6iTwyxQNfYkx1vGaQ2Ak1jYTbR2Qe">
+<input id="x-token" name="x-token" type="hidden" value="">
+<button type="submit" id="btn-main" class="btn btn-main">Get Link</button>
+<noscript><button type="submit" class="btn btn-main">Get Link</button></noscript>
+</form>
