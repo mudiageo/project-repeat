@@ -1,9 +1,9 @@
 {
   "name": "project-repeat",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "try.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node try.js"
   },
   "repository":{
     "type": "git",
