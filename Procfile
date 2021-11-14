@@ -1,1 +1,1 @@
-worker: node example.js
+web: node try.js
