@@ -32,8 +32,8 @@ req.on('error', error => {
 req.write(data)
 req.end()
 */
-
-
+const puppeteer = require('puppeteer');
+(async () => {
 const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
@@ -64,3 +64,4 @@ const browser = await puppeteer.launch();
     // Close the browser - done! 
     await browser.close();
 
+})();
