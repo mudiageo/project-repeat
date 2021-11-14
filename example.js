@@ -36,20 +36,21 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
     
     
   await page.waitFor(5000);
-                await page.waitForSelector('#btn-main').click('#btn-main');
+                var context = await page.waitForSelector('#btn-main');
+                await context.click('#btn-main');
  await page.waitFor(5000);
- await page.waitForSelector('#btn-main').click('#btn-main');
-            await page.waitFor(5000);
- await page.waitForSelector('#btn-main').click('#btn-main');
-                
+                 await context.click('#btn-main');
+           await page.waitFor(5000);
+                 await context.click('#btn-main');
+               
 await page.waitFor(5000);
- await page.waitForSelector('#btn-main').click('#btn-main');
+                 await context.click('#btn-main');
+           await page.waitFor(5000);
+                 await context.click('#btn-main');
+               
              await page.waitFor(5000);
- await page.waitForSelector('#btn-main').click('#btn-main');
-                
-             await page.waitFor(5000);
- await page.waitForSelector('#btn-main').click('#btn-main');   
-                
+                 await context.click('#btn-main');
+               
     await browser.close();
                 }
         catch(e){
