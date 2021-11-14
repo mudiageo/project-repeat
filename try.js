@@ -34,7 +34,7 @@ req.end()
 */
 const puppeteer = require('puppeteer');
 (async () => {
-const browser = await puppeteer.launch();
+const browser = await puppeteer.launch({args:["--no-sandbox"]});
     const page = await browser.newPage();
 
     // Allows you to intercept a request; must appear before
