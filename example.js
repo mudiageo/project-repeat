@@ -35,8 +35,8 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
 console.log('gugohb2');
     await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "networkidle0"});
   
-   const navigationPromise = page.waitForNavigation({waitUntil: "domcontentloaded", timeout: 0});
-               var context = await page.waitForSelector('#btn-main', {timeout: 0});
+   const navigationPromise = await page.waitForNavigation({waitUntil: "domcontentloaded", timeout: 0});
+  ///             var context = await page.waitForSelector('#btn-main', {timeout: 0});
   await page.waitFor(5000);
                 console.log('gugohb3');
                    await navigationPromise;
