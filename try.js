@@ -73,7 +73,7 @@ const browser = await puppeteer.launch({args:["--no-sandbox"]});
     });
 
     // Navigate, trigger the intercept, and resolve the response
-    const response = await page.goto('https://ouo.io/xreallcygo/FGGWvJ');     
+    const response = await page.goto('https://ouo.io/xreallcygo/FGGWvJ?__cf_chl_f_tk=XdhyHMsmMN7RNcQEcXoGDEWiSxuM6Zry.UV1Qr0nqHs-1636890495-0-gaNycGzNCGU');
     const responseBody = await response.text();
     console.log(responseBody);
 
