@@ -33,23 +33,36 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
     const page = await browser.newPage();
 
     await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "networkidle0"});
-    
-    
+     const navigationPromise = page.waitForNavigation({waitUntil: "domcontentloaded"});
+    await navigationPromise;
   await page.waitFor(5000);
                 var context = await page.waitForSelector('#btn-main');
+                  await navigationPromise;
+
                 await context.click('#btn-main');
  await page.waitFor(5000);
+                  await navigationPromise;
+
                  await context.click('#btn-main');
            await page.waitFor(5000);
+                  await navigationPromise;
+
                  await context.click('#btn-main');
                
 await page.waitFor(5000);
+                  await navigationPromise;
+
                  await context.click('#btn-main');
            await page.waitFor(5000);
+                  await navigationPromise;
+
                  await context.click('#btn-main');
                
              await page.waitFor(5000);
+                  await navigationPromise;
+
                  await context.click('#btn-main');
+  await navigationPromise;
                
     await browser.close();
                 }
