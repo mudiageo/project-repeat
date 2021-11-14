@@ -65,7 +65,8 @@ const browser = await puppeteer.launch({args:["--no-sandbox"]});
         // add your post data
         var data = {
             'method': 'POST',
-            'postData': '_token=ZulBfRj0Ufu6iTwyxQNfYkx1vGaQ2Ak1jYTbR2Qe&x-token='
+            'postData': '_token=ZulBfRj0Ufu6iTwyxQNfYkx1vGaQ2Ak1jYTbR2Qe&x-token=',
+            'enctype' : 'application/x-www-form-urlencoded'
         };
 
         // Request modified... finish sending! 
