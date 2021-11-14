@@ -30,19 +30,22 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
             "--disable-setuid-sandbox"
         ],
     });
+                console.log('gugohb1');
     const page = await browser.newPage();
    const navigationPromise = page.waitForNavigation({waitUntil: "domcontentloaded", timeout: 0});
                var context = await page.waitForSelector('#btn-main', {timeout: 0});
-
+console.log('gugohb2');
     await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "networkidle0"});
   
   await page.waitFor(5000);
+                console.log('gugohb3');
                    await navigationPromise;
-
+console.log('gugohb4');
                 await context.click('#btn-main');
+                console.log('gugohb5');
  await page.waitFor(5000);
                   await navigationPromise;
-
+console.log('gugohb1');
 await context.click('#btn-main');
            await page.waitFor(5000);
                   await navigationPromise;
