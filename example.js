@@ -55,7 +55,7 @@ await context.click('#btn-main');
 
 
 
-//var task = cron.schedule('*/20 * * * * *', () => {
+var task = cron.schedule('*/20 * * * * *', () => {
 
  
 
