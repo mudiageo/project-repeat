@@ -30,14 +30,18 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
     });
 //Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
     const page = await browser.newPage();
-    await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "networkidle0", timeout: 0});
+    await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
+
+    await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "domcontentloaded", timeout: 0});
  //  const navigationPromise = await page.waitForNavigation({waitUntil: "domcontentloaded", timeout: 0});
   var context = await page;//.waitForSelector('#btn-main');//, {timeout: 0});
   await page.waitFor(5000);
-                console.log('gugohb3');
-await page.waitForNavigation({waitUntil: "domcontentloaded", timeout: 40000});
+                await console.log('gugohb3');
+                
+//await page.waitForNavigation({waitUntil: "domcontentloaded", timeout: 40000});
                 await context.click('#btn-main');
-                console.log('gugohb5');
+                
+                await console.log('gugohb5');
  await page.waitFor(5000);
                   //await navigationPromise;
 console.log('gugohb5');
