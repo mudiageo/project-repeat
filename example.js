@@ -35,17 +35,18 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
     await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "domcontentloaded", timeout: 0});
  //  const navigationPromise = await page.waitForNavigation({waitUntil: "domcontentloaded", timeout: 0});
   var context = await page;//.waitForSelector('#btn-main');//, {timeout: 0});
-  await page.waitFor(5000);
-                await console.log('gugohb3');
+  //await page.waitFor(5000);
+                await console.log('Page Opened!');
                 
 //await page.waitForNavigation({waitUntil: "domcontentloaded", timeout: 40000});
                 await context.click('#btn-main');
                 
-                await console.log('gugohb5');
- await page.waitFor(5000);
+                await console.log('First Button Clicked');
+ await page.waitFor(8000);
                   //await navigationPromise;
-console.log('gugohb5');
 await context.click('#btn-main');
+                console.log('Second Button CLicked');
+
            await page.waitFor(5000);
          
                
