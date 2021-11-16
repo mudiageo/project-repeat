@@ -28,7 +28,7 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
             "--disable-setuid-sandbox"
         ],
     });
-
+//Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
     const page = await browser.newPage();
     await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "networkidle0", timeout: 0});
  //  const navigationPromise = await page.waitForNavigation({waitUntil: "domcontentloaded", timeout: 0});
