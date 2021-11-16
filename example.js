@@ -35,7 +35,7 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
   var context = await page;//.waitForSelector('#btn-main');//, {timeout: 0});
   await page.waitFor(5000);
                 console.log('gugohb3');
-await page.waitForNavigation({waitUntil: "domcontentloaded", timeout: 0});
+await page.waitForNavigation({waitUntil: "domcontentloaded", timeout: 40000});
                 await context.click('#btn-main');
                 console.log('gugohb5');
  await page.waitFor(5000);
