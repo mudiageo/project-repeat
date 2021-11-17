@@ -29,7 +29,10 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
         ],
     });
 //Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
-    const page = await browser.newPage();
+   // const page = await browser.newPage();
+                // get existing tab/page (first item in the array)
+var [page] = await browser.pages();
+
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
 
     await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "domcontentloaded", timeout: 0});
