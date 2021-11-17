@@ -18,55 +18,47 @@ puppeteer.use(StealthPlugin());
 // Add adblocker plugin to block all ads and trackers (saves bandwidth)
 const AdblockerPlugin = require("puppeteer-extra-plugin-adblocker");
 puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
+
 (async () => {
         try{
     const browser = await puppeteer.launch({
-        headless: true,
+        headless: false,
         args: [
             "--incognito",
             "--no-sandbox",
             "--disable-setuid-sandbox"
-        ],
+ 	]
     });
-//Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
-   // const page = await browser.newPage();
-                // get existing tab/page (first item in the array)
+// get existing tab/page (first item in the array)
+                
 var [page] = await browser.pages();
-
-    await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
-
-    await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "domcontentloaded", timeout: 0});
  //  const navigationPromise = await page.waitForNavigation({waitUntil: "domcontentloaded", timeout: 0});
-  var context = await page;//.waitForSelector('#btn-main');//, {timeout: 0});
-  //await page.waitFor(5000);
-                await console.log('Page Opened!');
-                
-//await page.waitForNavigation({waitUntil: "domcontentloaded", timeout: 40000});
-                await context.click('#btn-main');
-                
-                await console.log('First Button Clicked');
- await page.waitFor(8000);
-                  //await navigationPromise;
-await context.click('#btn-main');
-                console.log('Second Button CLicked');
-
+           await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
+           // const page = await browser.newPage();
+           await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "networkidle0", timeout: 0});
+           var context = await page;//.waitForSelector('#btn-main');//, {timeout: 0});
            await page.waitFor(5000);
+           await console.log('Page Opened 5 sec ago');
+         
+           await context.click('#btn-main');
+           await console.log('First Button clicked');
+           await page.waitFor(6000);
+           await console.log('6 secs interval');
+           await page.click('#btn-main');
+           await page.waitFor(10000);
+           await console.log('Button Clicked');
+         
          
                
-    await browser.close();
+           await browser.close();
                 }
         catch(e){
-                        console.log('38387'+e);
-                        }
+              console.log('38387'+e);
+                 }
 })();
 
-
-
 var task = cron.schedule('*/20 * * * * *', () => {
-
- 
-
-(async () => {
+ (async () => {
         try{
     const browser = await puppeteer.launch({
         headless: true,
@@ -74,27 +66,30 @@ var task = cron.schedule('*/20 * * * * *', () => {
             "--incognito",
             "--no-sandbox",
             "--disable-setuid-sandbox"
-        ],
+ 	]
     });
-
-    const page = await browser.newPage();
-    await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "networkidle0", timeout: 0});
+// get existing tab/page (first item in the array)
+var [page] = await browser.pages();
  //  const navigationPromise = await page.waitForNavigation({waitUntil: "domcontentloaded", timeout: 0});
-  var context = await page;//.waitForSelector('#btn-main');//, {timeout: 0});
-  await page.waitFor(5000);
-                console.log('gugohb3');
-                   //await navigationPromise;
 
-                await context.click('#btn-main');
-                console.log('gugohb5');
- await page.waitFor(5000);
-                  //await navigationPromise;
-console.log('gugohb5');
-await context.click('#btn-main');
+   // const page = await browser.newPage();
+           await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
+           await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "networkidle0", timeout: 0});
+           var context = await page;//.waitForSelector('#btn-main');//, {timeout: 0});
            await page.waitFor(5000);
+           await console.log('Page Opened 5 sec ago');
+         
+           await context.click('#btn-main');
+           await console.log('First Button clicked');
+           await page.waitFor(6000);
+           await console.log('6 secs interval');
+           await page.click('#btn-main');
+           await page.waitFor(10000);
+           await console.log('Button Clicked');
+         
          
                
-    await browser.close();
+           await browser.close();
                 }
         catch(e){
                         console.log('38387'+e);
