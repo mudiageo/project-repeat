@@ -65,8 +65,10 @@ var [page] = await browser.pages();
                 }
         catch(e){
               await console.log('38387'+e);
-              await browser.close();
-                 }
+             if (typeof browser !== 'undefined') {
+                 await browser.close();
+             }
+        }
 })();
 
 var task = cron.schedule('*/20 * * * * *', () => {
@@ -105,9 +107,10 @@ var [page] = await browser.pages();
                 }
         catch(e){
                         console.log('38387'+e);
-           await browser.close();
-
-                        }
+          if (typeof browser !== 'undefined') {
+               await browser.close();
+          }
+                }
 })();
 
 
