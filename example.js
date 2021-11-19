@@ -18,6 +18,19 @@ puppeteer.use(StealthPlugin());
 // Add adblocker plugin to block all ads and trackers (saves bandwidth)
 const AdblockerPlugin = require("puppeteer-extra-plugin-adblocker");
 puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
+const randomUseragent = require('random-useragent');
+
+const url = [
+   "https://ouo.io/FGGWvJ",
+   "https://ouo.io/tOpvPmW",
+   "https://ouo.io/GUzwgX",
+   "https://ouo.io/TmNXRkf",
+   "https://ouo.io/OKMtoY",
+   "https://ouo.io/2Qao9n",
+   "https://ouo.io/THmmDw"
+];
+
+let rand = Math.floor(Math.random() * 8);
 
 (async () => {
         try{
@@ -30,30 +43,29 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
  	]
     });
 // get existing tab/page (first item in the array)
-                
 var [page] = await browser.pages();
  //  const navigationPromise = await page.waitForNavigation({waitUntil: "domcontentloaded", timeout: 0});
-           await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
-           // const page = await browser.newPage();
-           await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "networkidle0", timeout: 0});
+// await page.setUserAgent(randomUseragent.getRandom());
+   // const page = await browser.newPage();
+           await page.goto(url[rand],  {"waitUntil" : "networkidle0", timeout: 0});
            var context = await page;//.waitForSelector('#btn-main');//, {timeout: 0});
-           await page.waitFor(5000);
-           await console.log('Page Opened 5 sec ago');
+           await page.waitFor(1000);
+           await console.log('Page Opened 1 sec ago');
          
            await context.click('#btn-main');
            await console.log('First Button clicked');
            await page.waitFor(6000);
-           await console.log('6 secs interval');
+           await console.log('6 sec interval');
            await page.click('#btn-main');
-           await page.waitFor(10000);
-           await console.log('Button Clicked');
-         
-         
+           await page.waitFor(1000);
+           await console.log('Second Button Clicked');
+        
                
            await browser.close();
                 }
         catch(e){
-              console.log('38387'+e);
+              await console.log('38387'+e);
+              await browser.close();
                  }
 })();
 
@@ -71,20 +83,20 @@ var task = cron.schedule('*/20 * * * * *', () => {
 // get existing tab/page (first item in the array)
 var [page] = await browser.pages();
  //  const navigationPromise = await page.waitForNavigation({waitUntil: "domcontentloaded", timeout: 0});
-
+//await page.setUserAgent(randomUseragent.getRandom());
+ 
    // const page = await browser.newPage();
-           await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36');
-           await page.goto('https://ouo.io/FGGWvJ',  {"waitUntil" : "networkidle0", timeout: 0});
+           await page.goto(url[rand],  {"waitUntil" : "networkidle0", timeout: 0});
            var context = await page;//.waitForSelector('#btn-main');//, {timeout: 0});
-           await page.waitFor(5000);
-           await console.log('Page Opened 5 sec ago');
+           await page.waitFor(1000);
+           await console.log('Page Opened 1 sec ago');
          
            await context.click('#btn-main');
            await console.log('First Button clicked');
            await page.waitFor(6000);
            await console.log('6 secs interval');
            await page.click('#btn-main');
-           await page.waitFor(10000);
+           await page.waitFor(1000);
            await console.log('Button Clicked');
          
          
@@ -93,6 +105,8 @@ var [page] = await browser.pages();
                 }
         catch(e){
                         console.log('38387'+e);
+           await browser.close();
+
                         }
 })();
 
