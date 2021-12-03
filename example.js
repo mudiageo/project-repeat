@@ -27,10 +27,14 @@ const url = [
    "https://ouo.io/TmNXRkf",
    "https://ouo.io/OKMtoY",
    "https://ouo.io/2Qao9n",
-   "https://ouo.io/THmmDw"
+   "https://ouo.io/THmmDw",
+   "https://ouo.io/0SXx3H",
+   "https://ouo.io/gg3L5v",
+   "https://ouo.io/6jFmTy",
+   "https://ouo.io/35RVtCk"
 ];
 
-let rand = Math.floor(Math.random() * 8);
+let rand = Math.floor(Math.random() * 12);
 
 (async () => {
         try{
