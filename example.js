@@ -52,7 +52,7 @@ var [page] = await browser.pages();
 // await page.setUserAgent(randomUseragent.getRandom());
    // const page = await browser.newPage();
            await page.goto(url[rand],  {"waitUntil" : "networkidle0", timeout: 0});
-           var context = await page;//.waitForSelector('#btn-main');//, {timeout: 0});
+           var context = await page.waitForSelector('#btn-main'), {timeout: 0});
            await page.waitFor(1000);
            await console.log('Page Opened 1 sec ago');
          
@@ -93,7 +93,7 @@ var [page] = await browser.pages();
  
    // const page = await browser.newPage();
            await page.goto(url[rand],  {"waitUntil" : "networkidle0", timeout: 0});
-           var context = await page;//.waitForSelector('#btn-main');//, {timeout: 0});
+           var context = await page.waitForSelector('#btn-main'), {timeout: 0});
            await page.waitFor(1000);
            await console.log('Page Opened 1 sec ago');
          
